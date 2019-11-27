@@ -15,7 +15,6 @@ void * PrintHelloWolrd(void *threadis){
     cout << "Hello World Thread ID " << tid <<endl;
     pthread_exit(NULL);
 }
-
 int main() {
     pthread_t threads[NUM_THREADS];
     int rc, i;
@@ -29,6 +28,15 @@ int main() {
             exit(-1);
         }
     }
+    
+Thread t = new Thread("Thread para contar", new Runnable() {
+	void run()
+	{
+		for(int i = 1 ; i <= 10 ; i++)
+			System.out.println(i);
+	}
+});
+t.start();
     pthread_exit(NULL);
     //cout << "Hello World\n";
     
